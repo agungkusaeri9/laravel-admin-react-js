@@ -18,6 +18,7 @@ import { sygnet } from 'src/assets/brand/sygnet'
 
 // sidebar nav config
 import navigation from '../_nav'
+import { Link } from 'react-router-dom'
 
 const AppSidebar = () => {
   const dispatch = useDispatch()
@@ -36,8 +37,8 @@ const AppSidebar = () => {
       }}
     >
       <CSidebarHeader className="border-bottom">
-        <CSidebarBrand to="/">
-          <CIcon customClassName="sidebar-brand-full" icon={logo} height={32} />
+        <CSidebarBrand to="/" className="text-center text-decoration-none">
+          <h6 className="">Laravel React Admin</h6>
           <CIcon customClassName="sidebar-brand-narrow" icon={sygnet} height={32} />
         </CSidebarBrand>
         <CCloseButton

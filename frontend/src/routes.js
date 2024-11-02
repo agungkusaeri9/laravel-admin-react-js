@@ -1,5 +1,6 @@
 import { element, exact } from 'prop-types'
 import React from 'react'
+import UserEdit from './views/pages/user/UserEdit'
 
 const Login = React.lazy(() => import('./views/pages/auth/Login'))
 const Dashboard = React.lazy(() => import('./views/dashboard/Dashboard'))
@@ -12,6 +13,7 @@ const routes = [
   { path: '/dashboard', name: 'Dashboard', element: Dashboard },
   { path: '/user', name: 'User', element: UserIndex },
   { path: '/user/create', name: 'Create', element: UserCreate },
+  { path: '/user/edit/:id', name: 'Edit', element: UserEdit },
 ]
 
 export default routes

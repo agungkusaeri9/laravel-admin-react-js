@@ -14,12 +14,15 @@ class ResponseFormatter
         'errors' => NULL
     ];
 
-    public static function success($data = NULL, $message = NULL, $code = 200, $token = NULL)
+    public static function success($data = NULL, $message = NULL, $code = 200, $pagination = NULL)
     {
         self::$response['meta']['message'] = $message;
         self::$response['data'] = $data;
         self::$response['meta']['code'] = $code;
         self::$response['errors'] = NULL;
+        if ($pagination) {
+            self::$response['meta']['pagination'] = $pagination;
+        }
 
         return response()->json(self::$response, self::$response['meta']['code']);
     }
